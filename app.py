@@ -28,8 +28,8 @@ st.markdown("""
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
     
-    /* Apply font family globally */
-    html, body, [class*="css"], [class*="st-"] {
+    /* Apply font family globally without breaking Streamlit icons */
+    html, body, [data-testid="stAppViewContainer"], [data-testid="stSidebar"] {
         font-family: 'Outfit', sans-serif;
     }
     
