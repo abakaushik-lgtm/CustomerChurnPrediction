@@ -17,7 +17,7 @@ from churn_engine import (
 
 # Page configuration
 st.set_page_config(
-    page_title="Antigravity Churn Analytics",
+    page_title="Customer Churn Analytics",
     page_icon="🔮",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -327,7 +327,7 @@ with st.sidebar:
     """, unsafe_allow_html=True)
     
     st.markdown("---")
-    st.markdown("<p style='text-align: center; color: #64748B; font-size: 0.8rem;'>Powered by Antigravity Engine v1.0.0</p>", unsafe_allow_html=True)
+    st.markdown("<p style='text-align: center; color: #64748B; font-size: 0.8rem;'>Powered by Churn Prediction Engine v1.0.0</p>", unsafe_allow_html=True)
 
 # Main Dashboard Tabs
 tabs = st.tabs([
