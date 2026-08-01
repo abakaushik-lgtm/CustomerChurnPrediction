@@ -1,6 +1,6 @@
 # Customer Churn Prediction & Analytics Platform
 
-> **Repository Description**: End-to-end Customer Churn Prediction & Analytics Platform using Python, Scikit-learn, SQL, Plotly, and Streamlit with interactive dashboards and machine learning insights.
+> **Repository Description**: End-to-end Customer Churn Prediction & Analytics Platform using Python, Machine Learning, SQL, Plotly, Streamlit, and interactive business dashboards.
 
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-Streamlit%20Community%20Cloud-FF4B4B?style=for-the-badge&logo=streamlit)](https://customer-churn-prediction-demo.streamlit.app/)
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg?logo=python&logoColor=white)](https://www.python.org/)
@@ -12,9 +12,9 @@
 
 ---
 
-## 🌐 Live Demo
+## 🌐 Live Demo & Instant Launch
 
-🚀 **Experience the Live Interactive Web App**: [https://customer-churn-prediction-demo.streamlit.app/](https://customer-churn-prediction-demo.streamlit.app/)
+🚀 **Experience the Live Web Application**: [https://customer-churn-prediction-demo.streamlit.app/](https://customer-churn-prediction-demo.streamlit.app/)
 
 ---
 
@@ -24,28 +24,37 @@
 
 ---
 
+## 📸 Project Preview & Key Highlights
+
+### Executive Dashboard Preview
+![Executive Dashboard Overview](dashboard_images/01_executive_dashboard.png)
+
+### Key Project Capabilities:
+* **Interactive Executive Dashboard**: Live KPI metrics (Total Customers, Churn Rate, Revenue Lost, High-Risk Accounts, Model Accuracy, ROC-AUC).
+* **Machine Learning Model Studio**: Automated evaluation of Logistic Regression, Random Forest, and XGBoost with ROC curves & Confusion Matrices.
+* **Customer Segmentation**: Unsupervised K-Means clustering partitioning customers into Loyal Users, New Users, and At-Risk Cohorts.
+* **SQL Analytics Suite**: Production-ready `.sql` query library targeting high-value customer churn, CLV quartiles, and revenue loss.
+* **Real-Time Risk Predictor**: Instant inference engine generating customer risk scores & customized retention action plans.
+
+---
+
 ## 📌 Project Overview
 
-The **Customer Churn Prediction & Analytics Platform** is an enterprise-grade Data Science and Business Intelligence solution designed to detect customer attrition risk, analyze behavioral churn drivers, segment subscriber cohorts, and recommend automated retention playbooks for Customer Success teams.
+The **Customer Churn Prediction & Analytics Platform** is a full-stack Data Science and Business Intelligence solution designed to detect customer attrition risk, analyze behavioral churn drivers, segment subscriber cohorts, and recommend automated retention playbooks for Customer Success teams.
 
 ---
 
 ## 💼 Business Problem
 
-Acquiring new customers is **5x to 25x more expensive** than retaining existing ones. High monthly churn directly reduces Monthly Recurring Revenue (MRR) and compromises Customer Lifetime Value (CLV).
+Acquiring new customers costs **5x to 25x more** than retaining existing ones. High monthly churn directly reduces Monthly Recurring Revenue (MRR) and compromises Customer Lifetime Value (CLV).
 
 * **Baseline Churn Rate**: 26.5% (1,869 out of 7,043 customers)
 * **Monthly Revenue at Risk**: $131,200 / month
 * **Annual Revenue Impact**: $1.57 Million / year
 
-### Strategic Objectives:
-1. **Predictive Risk Scoring**: Classify subscribers into Low, Medium, or High Risk tiers before they churn.
-2. **Behavioral Insight Discovery**: Uncover leading risk indicators (contract types, support tickets, monthly bills).
-3. **Revenue Impact Simulation**: Model financial savings achieved by proactive retention campaigns.
-
 ---
 
-## 📊 Dataset
+## 📊 Dataset Overview
 
 The dataset consists of **7,043 customer accounts** evaluated across **20 feature attributes**:
 
@@ -59,57 +68,110 @@ The dataset consists of **7,043 customer accounts** evaluated across **20 featur
 
 ## 🛠️ Technologies Used
 
-* **Core Programming**: Python 3.10+
-* **Machine Learning & Modeling**: Scikit-learn, XGBoost, Joblib
+* **Core Language**: Python 3.10+
+* **Machine Learning**: Scikit-learn, XGBoost, Joblib
 * **Data Processing & Analytics**: Pandas, NumPy
-* **Interactive Frontend Dashboard**: Streamlit, Custom Dark CSS
-* **Data Visualization**: Plotly Express, Plotly Graph Objects, Seaborn, Matplotlib
-* **Database & SQL Engine**: PostgreSQL, SQLite, DuckDB SQL Scripts
+* **Interactive Web App**: Streamlit, Custom Dark CSS
+* **Data Visualizations**: Plotly Express, Plotly Graph Objects, Seaborn, Matplotlib
+* **Database & SQL Engine**: PostgreSQL, SQLite, DuckDB
 
 ---
 
-## 🔄 ML Pipeline Architecture
+## ⚙️ ML Pipeline & System Architecture
 
-```text
-┌──────────────────────┐    ┌──────────────────────┐    ┌──────────────────────┐
-│  Raw Data Extraction │ ──>│  Data Cleaning &     │ ──>│  Feature Scaling &   │
-│  (data/raw/csv)      │    │  Imputation          │    │  Label Encoding      │
-└──────────────────────┘    └──────────────────────┘    └──────────────────────┘
-                                                                   │
-┌──────────────────────┐    ┌──────────────────────┐               ▼
-│  Streamlit App &     │ <──│  Hyperparameter      │ <──┌──────────────────────┐
-│  Interactive UI      │    │  Tuning & ROC-AUC    │    │  Logistic Regression,│
-└──────────────────────┘    └──────────────────────┘    │  Random Forest & XGB │
-                                                        └──────────────────────┘
+```mermaid
+graph TD
+    A["Raw Customer Data (data/raw/csv)"] --> B["Data Cleaning & Imputation"]
+    B --> C["Feature Encoding & StandardScaler"]
+    C --> D["Train-Test Split (80/20 Stratified)"]
+    D --> E["Model Studio (LR, RF, XGBoost)"]
+    E --> F["Best Model Selection (XGBoost 95% Acc)"]
+    F --> G["K-Means Customer Segmentation"]
+    G --> H["Streamlit Web App (app.py)"]
+    H --> I["Real-Time Risk Predictor & Playbook"]
 ```
 
-1. **Preprocessing & Imputation**: Fill missing Total Charges using `Tenure × Monthly Charges` logic; remove duplicates.
-2. **Feature Engineering**: One-hot encode multi-categorical variables (`Payment Method`) and scale continuous numerical metrics using `StandardScaler`.
-3. **Model Selection**: Train Logistic Regression, Random Forest, Gradient Boosting, and XGBoost classifiers.
-4. **Segmentation**: Run K-Means clustering (3 clusters: Loyal Users, New Users, At-Risk Users).
+---
+
+## 🤖 Model Performance Comparison
+
+| Model | Accuracy | Precision | Recall | F1 Score | ROC-AUC |
+|---|---|---|---|---|---|
+| **Logistic Regression** | 89.0% | 87.0% | 85.0% | 86.0% | 0.91 |
+| **Random Forest** | 93.0% | 91.0% | 90.0% | 90.0% | 0.96 |
+| **XGBoost Classifier** | **95.0%** | **94.0%** | **93.0%** | **93.0%** | **0.98** |
+
+### Evaluation Visualizations
+| Confusion Matrix | ROC Curve | Feature Importance |
+|---|---|---|
+| ![Confusion Matrix](dashboard_images/confusion_matrix.png) | ![ROC Curve](dashboard_images/roc_curve.png) | ![Feature Importance](dashboard_images/feature_importance.png) |
 
 ---
 
-## 🖼️ Dashboard Screenshots
+## 📂 Repository Structure
 
-### 1. Executive Dashboard Overview
-![Executive Dashboard](dashboard_images/01_executive_dashboard.png)
-
-### 2. Churn Risk Analysis
-![Churn Risk Analysis](dashboard_images/02_churn_risk_analysis.png)
-
-### 3. Customer Segmentation (K-Means)
-![Customer Segmentation](dashboard_images/03_customer_segmentation.png)
-
-### 4. Revenue Impact & Financial Loss
-![Revenue Impact](dashboard_images/04_revenue_impact.png)
-
-### 5. Real-Time Churn Predictor
-![Prediction Screen](dashboard_images/05_prediction_screen.png)
+```text
+CustomerChurnPrediction
+│
+├── data/
+│   ├── raw/
+│   │   └── customer_churn_data.csv          # Raw customer base dataset (7,043 rows)
+│   └── processed/
+│       ├── cleaned_churn_data.csv        # Cleaned dataset with missing value imputation
+│       └── churn_features.csv            # Preprocessed feature matrix for modeling
+│
+├── models/
+│   ├── logistic_regression.joblib       # Pre-trained Logistic Regression model
+│   ├── random_forest.joblib             # Pre-trained Random Forest model
+│   ├── xgboost.joblib                   # Pre-trained XGBoost model
+│   ├── gradient_boosting.joblib         # Pre-trained Gradient Boosting model
+│   ├── scaler.joblib                    # Fitted StandardScaler
+│   ├── label_encoders.joblib            # Categorical label encoders
+│   └── kmeans_cluster_model.joblib      # K-Means customer segmentation model
+│
+├── notebooks/
+│   ├── 01_exploratory_data_analysis.ipynb
+│   ├── 02_model_training_and_evaluation.ipynb
+│   └── 03_customer_segmentation.ipynb
+│
+├── sql/
+│   ├── 01_churn_by_region.sql
+│   ├── 02_churn_by_contract_type.sql
+│   ├── 03_high_risk_customers.sql
+│   ├── 04_revenue_lost.sql
+│   ├── 05_customer_lifetime_value.sql
+│   ├── 06_monthly_churn_trend.sql
+│   └── churn_analytics_master.sql
+│
+├── streamlit/
+│   ├── config.toml                      # Streamlit theme configuration
+│   └── styles.css                       # Custom CSS styling tokens
+│
+├── dashboard_images/
+│   ├── 01_executive_dashboard.png
+│   ├── 02_churn_risk_analysis.png
+│   ├── 03_customer_segmentation.png
+│   ├── 04_revenue_impact.png
+│   ├── 05_prediction_screen.png
+│   ├── confusion_matrix.png
+│   ├── roc_curve.png
+│   └── feature_importance.png
+│
+├── reports/
+│   ├── executive_summary.md             # Executive brief for leadership
+│   └── churn_insights_report.md         # Detailed analytics report
+│
+├── app.py                               # Interactive Streamlit Web Application
+├── churn_engine.py                      # Data pipeline & machine learning engine
+├── generate_churn_data.py               # Data generation utility
+├── requirements.txt                     # Project dependencies
+├── README.md                            # Comprehensive documentation
+└── LICENSE                              # MIT License
+```
 
 ---
 
-## ⚙️ Installation & Setup Guide
+## 🛠️ Installation & Execution Guide
 
 ### 1. Clone the repository
 ```bash
@@ -130,34 +192,12 @@ Open **[http://localhost:8501](http://localhost:8501)** in your browser.
 
 ---
 
-## 📈 Results & Key Business Findings
+## 🔮 Future Enhancements
 
-### 🤖 Machine Learning Model Performance
-
-| Model | Accuracy | Precision | Recall | F1 Score | ROC-AUC |
-|---|---|---|---|---|---|
-| **Logistic Regression** | 89.0% | 87.0% | 85.0% | 86.0% | 0.91 |
-| **Random Forest** | 93.0% | 91.0% | 90.0% | 90.0% | 0.96 |
-| **XGBoost Classifier** | **95.0%** | **94.0%** | **93.0%** | **93.0%** | **0.98** |
-
-### Evaluation Visualizations
-| Confusion Matrix | ROC Curve | Feature Importance |
-|---|---|---|
-| ![Confusion Matrix](dashboard_images/confusion_matrix.png) | ![ROC Curve](dashboard_images/roc_curve.png) | ![Feature Importance](dashboard_images/feature_importance.png) |
-
-### 💡 Core Insights:
-1. **Contract Type Vulnerability**: Month-to-Month contracts have a **42.7% churn rate** vs 2.8% for 2-year contracts.
-2. **Tenure Stability Threshold**: Accounts active >24 months experience less than 10% churn probability.
-3. **Support Ticket Alert**: Submitting 3+ support tickets indicates an 84% likelihood of imminent churn.
-
----
-
-## 🔮 Future Improvements
-
-* [ ] Integrate SHAP (SHapley Additive exPlanations) for local model interpretability per customer account.
-* [ ] Implement automated email outreach API via Twilio / SendGrid for High-Risk accounts.
-* [ ] Add Survival Analysis (Kaplan-Meier Curves) to predict exact time-to-churn.
-* [ ] Deploy Docker containerization for Kubernetes production orchestration.
+* [ ] Integrate SHAP (SHapley Additive exPlanations) for per-customer local explainability.
+* [ ] Build automated SMS/Email webhook triggers via SendGrid & Twilio APIs.
+* [ ] Implement Survival Analysis (Kaplan-Meier Curves) for predicting time-to-churn.
+* [ ] Containerize application with Docker & Kubernetes deployment manifests.
 
 ---
 
