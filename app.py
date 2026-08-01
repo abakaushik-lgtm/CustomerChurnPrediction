@@ -344,7 +344,7 @@ with st.sidebar:
 
 # Main Dashboard Tabs
 tabs = st.tabs([
-    "📈 Executive Dashboard",
+    "📈 Executive Overview",
     "📂 Dataset Overview",
     "📊 Churn Analytics",
     "🤖 Churn Prediction",
@@ -1056,3 +1056,15 @@ with tabs[6]:
             for play in plays:
                 st.markdown(f"- `{play}`")
         st.markdown("</div>", unsafe_allow_html=True)
+
+# Global Footer
+st.markdown("""
+<div style="margin-top: 3rem; padding: 1.5rem 0; border-top: 1px solid rgba(255, 255, 255, 0.08); text-align: center;">
+    <p style="margin-bottom: 0.35rem; font-weight: 600; color: #94A3B8; font-size: 0.9rem;">
+        Customer Churn Prediction & Analytics Platform
+    </p>
+    <p style="margin: 0; color: #64748B; font-size: 0.8rem;">
+        Built with Python • Streamlit • SQL • Plotly • Scikit-learn
+    </p>
+</div>
+""", unsafe_allow_html=True)
