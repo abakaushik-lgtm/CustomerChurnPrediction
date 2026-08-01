@@ -175,8 +175,10 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# Define file paths
-DEFAULT_DATA_PATH = "c:/Users/garvi/Documents/Data Science Projects/Customer Churn Prediction/customer_churn_data.csv"
+# Define file paths relative to script location
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DEFAULT_DATA_PATH = os.path.join(BASE_DIR, "data", "raw", "customer_churn_data.csv")
+MODELS_DIR = os.path.join(BASE_DIR, "models")
 
 # Global helper to generate data if not present
 if not os.path.exists(DEFAULT_DATA_PATH):

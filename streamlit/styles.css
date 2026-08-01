@@ -1,0 +1,29 @@
+/* Global App Styles for Dark Theme Dashboard */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+html, body, [data-testid="stAppViewContainer"], [data-testid="stSidebar"] {
+    font-family: 'Outfit', sans-serif;
+}
+
+.stApp {
+    background-color: #0B0F19;
+    color: #E2E8F0;
+}
+
+.app-header {
+    background: linear-gradient(135deg, #1E1B4B 0%, #0F172A 100%);
+    padding: 2.5rem;
+    border-radius: 16px;
+    margin-bottom: 2rem;
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.app-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0;
+    background: linear-gradient(to right, #38BDF8, #818CF8, #EC4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
