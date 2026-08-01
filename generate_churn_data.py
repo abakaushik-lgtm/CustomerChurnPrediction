@@ -116,4 +116,4 @@ def generate_data(file_path):
     print(f"Churn rate: {(df['Churn'] == 'Yes').mean() * 100:.2f}%")
 
 if __name__ == "__main__":
-    generate_data("c:/Users/garvi/Documents/Data Science Projects/Customer Churn Prediction/customer_churn_data.csv")
+    generate_data("data/raw/customer_churn_data.csv")
