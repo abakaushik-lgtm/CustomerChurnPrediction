@@ -17,7 +17,7 @@ from churn_engine import (
 
 # Page configuration
 st.set_page_config(
-    page_title="Customer Churn Analytics",
+    page_title="Customer Churn Prediction & Analytics Platform",
     page_icon="🔮",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -262,7 +262,7 @@ if st.session_state.trained_models is None:
 # App Header
 st.markdown("""
 <div class="app-header">
-    <h1 class="app-title">🔮 Customer Churn Analytics Platform</h1>
+    <h1 class="app-title">🔮 Customer Churn Prediction & Analytics Platform</h1>
     <p class="app-subtitle">End-to-end Machine Learning platform for customer churn prediction, retention analytics, business intelligence, and executive decision support.</p>
 </div>
 """, unsafe_allow_html=True)

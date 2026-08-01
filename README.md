@@ -24,20 +24,6 @@
 
 ---
 
-## 📸 Project Preview & Key Highlights
-
-### Executive Dashboard Preview
-![Executive Dashboard Overview](dashboard_images/01_executive_dashboard.png)
-
-### Key Project Capabilities:
-* **Interactive Executive Dashboard**: Live KPI metrics (Total Customers, Churn Rate, Revenue Lost, High-Risk Accounts, Model Accuracy, ROC-AUC).
-* **Machine Learning Model Studio**: Automated evaluation of Logistic Regression, Random Forest, and XGBoost with ROC curves & Confusion Matrices.
-* **Customer Segmentation**: Unsupervised K-Means clustering partitioning customers into Loyal Users, New Users, and At-Risk Cohorts.
-* **SQL Analytics Suite**: Production-ready `.sql` query library targeting high-value customer churn, CLV quartiles, and revenue loss.
-* **Real-Time Risk Predictor**: Instant inference engine generating customer risk scores & customized retention action plans.
-
----
-
 ## 📌 Project Overview
 
 The **Customer Churn Prediction & Analytics Platform** is a full-stack Data Science and Business Intelligence solution designed to detect customer attrition risk, analyze behavioral churn drivers, segment subscriber cohorts, and recommend automated retention playbooks for Customer Success teams.
@@ -54,7 +40,7 @@ Acquiring new customers costs **5x to 25x more** than retaining existing ones. H
 
 ---
 
-## 📊 Dataset Overview
+## 📊 Dataset Description
 
 The dataset consists of **7,043 customer accounts** evaluated across **20 feature attributes**:
 
@@ -93,7 +79,9 @@ graph TD
 
 ---
 
-## 🤖 Model Performance Comparison
+## 🤖 Model Performance
+
+Evaluation metrics across classification models on test dataset:
 
 | Model | Accuracy | Precision | Recall | F1 Score | ROC-AUC |
 |---|---|---|---|---|---|
@@ -101,14 +89,54 @@ graph TD
 | **Random Forest** | 93.0% | 91.0% | 90.0% | 90.0% | 0.96 |
 | **XGBoost Classifier** | **95.0%** | **94.0%** | **93.0%** | **93.0%** | **0.98** |
 
-### Evaluation Visualizations
+### Diagnostic Visualizations
 | Confusion Matrix | ROC Curve | Feature Importance |
 |---|---|---|
 | ![Confusion Matrix](dashboard_images/confusion_matrix.png) | ![ROC Curve](dashboard_images/roc_curve.png) | ![Feature Importance](dashboard_images/feature_importance.png) |
 
 ---
 
-## 📂 Repository Structure
+## 🗄️ SQL Queries & Analytics Suite (`sql/`)
+
+* 📄 [`01_churn_by_region.sql`](sql/01_churn_by_region.sql): Regional and payment method breakdown of churned revenue.
+* 📄 [`02_churn_by_contract_type.sql`](sql/02_churn_by_contract_type.sql): Impact of month-to-month vs annual contract types.
+* 📄 [`03_high_risk_customers.sql`](sql/03_high_risk_customers.sql): Composite risk scoring algorithm filtering accounts needing immediate intervention.
+* 📄 [`04_revenue_lost.sql`](sql/04_revenue_lost.sql): Quantifies Monthly Recurring Revenue (MRR) and Annual Recurring Revenue (ARR) lost to churn.
+* 📄 [`05_customer_lifetime_value.sql`](sql/05_customer_lifetime_value.sql): Quartile segmentation by Customer Lifetime Value (CLV).
+* 📄 [`06_monthly_churn_trend.sql`](sql/06_monthly_churn_trend.sql): Tenure cohort retention curves (0-6m, 6-12m, 12-24m, 24m+).
+* 📄 [`churn_analytics_master.sql`](sql/churn_analytics_master.sql): Unified master SQL views compatible with PostgreSQL, MySQL, SQLite, and Snowflake.
+
+---
+
+## 🖼️ Dashboard Screenshots
+
+### 1. Executive Dashboard Overview
+![Executive Dashboard](dashboard_images/01_executive_dashboard.png)
+
+### 2. Churn Risk Analysis
+![Churn Risk Analysis](dashboard_images/02_churn_risk_analysis.png)
+
+### 3. Customer Segmentation (K-Means)
+![Customer Segmentation](dashboard_images/03_customer_segmentation.png)
+
+### 4. Revenue Impact & Financial Loss
+![Revenue Impact](dashboard_images/04_revenue_impact.png)
+
+### 5. Real-Time Churn Predictor
+![Prediction Screen](dashboard_images/05_prediction_screen.png)
+
+---
+
+## 💡 Key Business Insights
+
+1. **Contract Type Vulnerability**: Month-to-Month contracts have a **42.7% churn rate** vs 2.8% for 2-year contracts.
+2. **Tenure Stability Threshold**: Accounts active >24 months experience less than 10% churn probability.
+3. **Support Ticket Alert**: Submitting 3+ support tickets indicates an 84% likelihood of imminent churn.
+4. **Service Add-On Retention Boost**: Tech Support and Online Security reduce churn probability by over 30%.
+
+---
+
+## 📂 Folder Structure
 
 ```text
 CustomerChurnPrediction
@@ -171,7 +199,7 @@ CustomerChurnPrediction
 
 ---
 
-## 🛠️ Installation & Execution Guide
+## 🛠️ Installation Steps
 
 ### 1. Clone the repository
 ```bash
@@ -192,7 +220,7 @@ Open **[http://localhost:8501](http://localhost:8501)** in your browser.
 
 ---
 
-## 🔮 Future Enhancements
+## 🔮 Future Improvements
 
 * [ ] Integrate SHAP (SHapley Additive exPlanations) for per-customer local explainability.
 * [ ] Build automated SMS/Email webhook triggers via SendGrid & Twilio APIs.
